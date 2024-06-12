@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   deleteItem = id => {
-    const {latestList} = this.State
+    const {latestList} = this.state
     const newList = latestList.filter(eachValue => eachValue.id !== id)
     const caseOf = newList.length !== 0
     this.setState({latestList: newList, isTrue: caseOf})
@@ -215,7 +215,7 @@ class App extends Component {
                     type="button"
                     className="del-btn"
                     onClick={() => this.deleteItem(eachValue.id)}
-                    testid="delete"
+                    data-testid="delete"
                   >
                     <img
                       src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
