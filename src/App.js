@@ -6,7 +6,7 @@ import './App.css'
 const colorList = ['yellow', 'green', 'orange', 'brown', 'blue']
 
 class App extends Component {
-  State = {
+  state = {
     isTrue: false,
     latestList: [],
     website: '',
