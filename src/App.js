@@ -29,7 +29,7 @@ class App extends Component {
 
   addContent = e => {
     e.preventDefault()
-    const {username, website, password} = this.State
+    const {username, website, password} = this.state
     const initial = website.slice(0, 1).toUpperCase()
     const classValue = colorList[Math.floor(Math.random() * 5)]
     const newValues = {
