@@ -1,5 +1,6 @@
 import {Component} from 'react'
-import {v4} from 'uuid'
+
+import {v4 as uuidv4} from 'uuid'
 
 import './App.css'
 
@@ -33,7 +34,7 @@ class App extends Component {
     const initial = website.slice(0, 1).toUpperCase()
     const classValue = colorList[Math.floor(Math.random() * 5)]
     const newValues = {
-      id: v4(),
+      id: uuidv4(),
       initialValue: initial,
       websiteName: website,
       userName: username,
@@ -70,8 +71,14 @@ class App extends Component {
   }
 
   render() {
-    const {website, username, password, latestList, isShow, searchInput} =
-      this.state
+    const {
+      website, 
+      username, 
+      password, 
+      latestList, 
+      isShow, 
+      searchInput,
+    } = this.state
     let {isTrue} = this.state
     const newList = latestList.filter(eachValue =>
       eachValue.websiteName.toLowerCase().includes(searchInput.toLowerCase()),
@@ -132,7 +139,7 @@ class App extends Component {
                 alt="password"
               />
               <input
-                type="text"
+                type="password"
                 className="input-element"
                 placeholder="Enter Password"
                 onChange={this.listenPassword}
